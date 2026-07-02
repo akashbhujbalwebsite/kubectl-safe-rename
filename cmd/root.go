@@ -13,9 +13,16 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "kubectl-rename",
-	Short: "Safely rename Kubernetes resources",
-	Long:  "Rename ConfigMaps and Secrets by creating a copy with the new name and deleting the old one.",
+	Use:   "kubectl-safe-rename",
+	Short: "Safely rename ConfigMaps and Secrets",
+	Long: `kubectl safe-rename renames ConfigMaps and Secrets — the only Kubernetes
+resources where a rename is safe. These resources are stateless data stores
+whose names carry no runtime identity; Kubernetes imposes no live binding on
+their names at the API level.
+
+Other resources (Pods, Deployments, Services, ServiceAccounts, PVCs) are
+intentionally not supported: their names are tied to DNS, pod identity, or
+runtime bindings where a create+delete cycle would break running workloads.`,
 }
 
 func Execute() error {

@@ -1,33 +1,35 @@
-# kubectl-rename
+# kubectl-safe-rename
 
-A kubectl plugin that safely renames Kubernetes ConfigMaps and Secrets — with a pre-flight permission check, dependency scanner, `--dry-run` mode, and automatic partial-failure recovery.
+A kubectl plugin that safely renames Kubernetes ConfigMaps and Secrets — the only resources where rename is safe. Includes a pre-flight permission check, dependency scanner, `--dry-run` mode, and automatic partial-failure recovery.
+
+ConfigMaps and Secrets are stateless data stores whose names carry no runtime identity. Other resources (Pods, Deployments, Services, ServiceAccounts, PVCs) are intentionally not supported — their names are tied to DNS, pod identity, or runtime bindings where a create+delete cycle would break running workloads.
 
 ## Installation
 
 ```bash
-kubectl krew install rename
+kubectl krew install safe-rename
 ```
 
 Or manually:
 ```bash
-curl -L <release-url>/kubectl-rename_linux_amd64.tar.gz | tar xz
-chmod +x kubectl-rename && mv kubectl-rename /usr/local/bin/
+curl -L <release-url>/kubectl-safe-rename_linux_amd64.tar.gz | tar xz
+chmod +x kubectl-safe-rename && mv kubectl-safe-rename /usr/local/bin/
 ```
 
 ## Usage
 
 ```bash
 # Rename a ConfigMap
-kubectl rename configmap app-config app-config-v2 -n staging
+kubectl safe-rename configmap app-config app-config-v2 -n staging
 
 # Rename a Secret
-kubectl rename secret db-creds db-creds-v2 -n production
+kubectl safe-rename secret db-creds db-creds-v2 -n production
 
 # Preview what will happen — no changes made
-kubectl rename configmap app-config app-config-v2 -n staging --dry-run
+kubectl safe-rename configmap app-config app-config-v2 -n staging --dry-run
 
 # Skip confirmation prompt (for scripts/CI)
-kubectl rename configmap app-config app-config-v2 -n staging -y
+kubectl safe-rename configmap app-config app-config-v2 -n staging -y
 ```
 
 ## Example Output

@@ -1,14 +1,19 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: rename
+  name: safe-rename
 spec:
   version: v0.1.0
   homepage: https://github.com/akashbhujbalwebsite/kubectl-rename
   shortDescription: Safely rename ConfigMaps and Secrets
   description: |
-    kubectl rename safely renames Kubernetes ConfigMaps and Secrets
-    by creating a copy under the new name and deleting the original.
+    kubectl safe-rename renames ConfigMaps and Secrets. These resources are
+    stateless data stores whose names carry no runtime identity — Kubernetes
+    imposes no live binding on their names at the API level. Other resources
+    such as Pods, Deployments, Services, ServiceAccounts, and PVCs are
+    intentionally not supported: their names are tied to DNS, pod identity,
+    or runtime bindings where a create+delete cycle would break running
+    workloads.
 
     Features:
       - Pre-flight permission check (get+create+delete) before touching anything
