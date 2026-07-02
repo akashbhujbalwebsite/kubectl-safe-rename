@@ -1,4 +1,4 @@
-module github.com/akashbhujbalwebsite/kubectl-rename
+module github.com/akashbhujbalwebsite/kubectl-safe-rename
 
 go 1.26.0
 

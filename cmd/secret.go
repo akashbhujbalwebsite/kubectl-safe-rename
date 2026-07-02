@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/akashbhujbalwebsite/kubectl-rename/pkg/rename"
+	"github.com/akashbhujbalwebsite/kubectl-safe-rename/pkg/rename"
 	"github.com/spf13/cobra"
 )
 

@@ -4,7 +4,7 @@ metadata:
   name: safe-rename
 spec:
   version: v0.1.0
-  homepage: https://github.com/akashbhujbalwebsite/kubectl-rename
+  homepage: https://github.com/akashbhujbalwebsite/kubectl-safe-rename
   shortDescription: Safely rename ConfigMaps and Secrets
   description: |
     kubectl safe-rename renames ConfigMaps and Secrets. These resources are
@@ -41,9 +41,9 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_linux_amd64.tar.gz
+      uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.1.0/kubectl-safe-rename_linux_amd64.tar.gz
       sha256: "7eccfdbb30d2f142b6b1410e3d4e56ed0598657bbcb2a4e76bd68253511ebd3d"
-      bin: kubectl-rename
+      bin: kubectl-safe-rename
       files:
         - from: "*"
           to: "."
@@ -52,9 +52,9 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_linux_arm64.tar.gz
+      uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.1.0/kubectl-safe-rename_linux_arm64.tar.gz
       sha256: "6667c3840817d95b6c3484a0753348dbd91d758ee8188d94d73fa37bcfcff04e"
-      bin: kubectl-rename
+      bin: kubectl-safe-rename
       files:
         - from: "*"
           to: "."
@@ -63,9 +63,9 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_darwin_amd64.tar.gz
+      uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.1.0/kubectl-safe-rename_darwin_amd64.tar.gz
       sha256: "d1512122cb43b9bba5a5b987387d02f845b879e7c15046a2604d45951fb712bc"
-      bin: kubectl-rename
+      bin: kubectl-safe-rename
       files:
         - from: "*"
           to: "."
@@ -74,9 +74,9 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_darwin_arm64.tar.gz
+      uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.1.0/kubectl-safe-rename_darwin_arm64.tar.gz
       sha256: "6e518954fd43bed6f3fefb854f9d0a079532103a9c92b714c8ee8ff53db29760"
-      bin: kubectl-rename
+      bin: kubectl-safe-rename
       files:
         - from: "*"
           to: "."
@@ -85,9 +85,9 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_windows_amd64.zip
+      uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.1.0/kubectl-safe-rename_windows_amd64.zip
       sha256: "f983872ff979ccdb3d865c2aab8fd46b5ecf9c65041b9546ca66cba24e59b527"
-      bin: kubectl-rename.exe
+      bin: kubectl-safe-rename.exe
       files:
         - from: "*"
           to: "."

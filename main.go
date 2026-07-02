@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/akashbhujbalwebsite/kubectl-rename/cmd"
+	"github.com/akashbhujbalwebsite/kubectl-safe-rename/cmd"
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
 )
 

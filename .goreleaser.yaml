@@ -1,13 +1,13 @@
-project_name: kubectl-rename
+project_name: kubectl-safe-rename
 
 before:
   hooks:
     - go mod tidy
 
 builds:
-  - id: kubectl-rename
+  - id: kubectl-safe-rename
     main: .
-    binary: kubectl-rename
+    binary: kubectl-safe-rename
     env:
       - CGO_ENABLED=0
     goos:
@@ -21,8 +21,8 @@ builds:
       - -s -w -X main.version={{.Version}}
 
 archives:
-  - id: kubectl-rename
-    name_template: "kubectl-rename_{{ .Os }}_{{ .Arch }}"
+  - id: kubectl-safe-rename
+    name_template: "kubectl-safe-rename_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       - goos: windows
         format: zip
@@ -37,7 +37,7 @@ checksum:
 release:
   github:
     owner: akashbhujbalwebsite
-    name: kubectl-rename
+    name: kubectl-safe-rename
   name_template: "v{{.Version}}"
 
 changelog:
